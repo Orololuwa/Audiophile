@@ -5,29 +5,30 @@ const ButtonCtx = styled.button`
     variant === "outline"
       ? "transparent"
       : variant === "filled"
-      ? theme.colors[colorScheme][500]
+      ? theme.colors[colorScheme][400]
       : variant === "ghost"
-      ? theme.colors[colorScheme][50]
+      ? "transparent"
       : theme.colors[colorScheme][500]};
   color: ${({ colorScheme, variant, theme, loading }) =>
     loading && variant === "filled"
-      ? theme.colors[colorScheme][500]
+      ? theme.colors[colorScheme][400]
       : !loading && variant === "filled"
       ? theme.colors.white
       : (loading && variant === "outline") || (loading && variant === "ghost")
       ? theme.colors.white
       : (!loading && variant === "outline") || (!loading && variant === "ghost")
-      ? theme.colors[colorScheme][500]
+      ? theme.colors[colorScheme][900]
       : theme.colors.white};
   border: 1px solid
     ${({ colorScheme, variant, theme }) =>
-      variant === "outline" || variant === "filled"
-        ? theme.colors[colorScheme][500]
+      variant === "filled"
+        ? theme.colors[colorScheme][400]
+        : variant === "outline"
+        ? theme.colors[colorScheme][900]
         : variant === "ghost"
-        ? theme.colors[colorScheme][50]
+        ? "transparent"
         : theme.colors[colorScheme][500]};
   padding: 10px 15px;
-  border-radius: 7.5px;
   width: max-content;
   font-size: ${({ theme }) => theme.typeScale.bodyText4};
   cursor: pointer;
@@ -50,25 +51,30 @@ const ButtonCtx = styled.button`
   &:active {
     background: ${({ colorScheme, variant, theme }) =>
       variant === "outline"
-        ? theme.colors[colorScheme][500]
+        ? theme.colors[colorScheme][900]
         : variant === "filled"
-        ? "transparent"
+        ? theme.colors[colorScheme][300]
         : variant === "ghost"
-        ? theme.colors[colorScheme][50]
+        ? "transparent"
         : theme.colors[colorScheme][500]};
     color: ${({ colorScheme, variant, theme, loading }) =>
       variant === "outline"
         ? theme.colors.white
         : variant === "filled"
-        ? theme.colors[colorScheme][500]
-        : theme.colors[colorScheme][500]};
+        ? theme.colors.white
+        : theme.colors.orange[400]};
+    border: 1px solid
+      ${({ colorScheme, variant, theme }) =>
+        variant === "filled"
+          ? theme.colors[colorScheme][300]
+          : variant === "outline"
+          ? theme.colors[colorScheme][900]
+          : variant === "ghost"
+          ? "transparent"
+          : theme.colors[colorScheme][500]};
     .loader {
       color: ${({ theme, colorScheme }) => theme.colors[colorScheme][500]}};
     }
-  }
-  &:focus {
-    box-shadow: 0 0 0 0.25rem
-      ${({ theme, colorScheme }) => `${theme.colors[colorScheme][500]}66`};
   }
 
   &:disabled{
@@ -77,10 +83,10 @@ const ButtonCtx = styled.button`
       variant === "outline"
         ? "transparent"
         : variant === "filled"
-        ? theme.colors[colorScheme][300]
+        ? theme.colors[colorScheme][100]
         : variant === "ghost"
-        ? theme.colors[colorScheme][50]
-        : theme.colors[colorScheme][300]};
+        ? "transparent"
+        : theme.colors[colorScheme][100]};
     color: ${({ colorScheme, variant, theme, loading }) =>
       loading && variant === "filled"
         ? theme.colors[colorScheme][300]

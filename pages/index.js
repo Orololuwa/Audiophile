@@ -19,11 +19,20 @@ const Home = (props) => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <Button colorScheme="orange">SEE PRODUCT</Button>
+          <Button variant="filled" colorScheme="orange">
+            SEE PRODUCT
+          </Button>
         </Col>
         <div className="hero-right">.</div>
       </Section>
-      <Section>tgul liih</Section>
+      <Section>
+        <Button variant="outline" colorScheme="gray">
+          SEE PRODUCT
+        </Button>
+        <Button variant="ghost" colorScheme="gray">
+          SEE PRODUCT
+        </Button>
+      </Section>
     </HomeCtx>
   );
 };
