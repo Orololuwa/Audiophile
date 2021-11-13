@@ -11,32 +11,30 @@ const Nav = (props) => {
   return (
     <NavContext {...props} size={15}>
       <span className={`menu-item ${router.pathname == "/" ? "active" : ""}`}>
-        <MdOutlineDashboard size={15} />
         <Link href="/" className="menu-link">
-          Dashboard
+          HOME
         </Link>
       </span>
       <span
-        className={`menu-item ${router.pathname == "/data" ? "active" : ""}`}
+        className={`menu-item ${
+          router.pathname == "/headphones" ? "active" : ""
+        }`}
       >
-        <RiPieChartLine size={15} />
-        <Link href="/data">Data</Link>
+        <Link href="/headphones">HEADPHONES</Link>
       </span>
       <span
         className={`menu-item ${
-          router.pathname == "/customers" ? "active" : ""
+          router.pathname == "/speakers" ? "active" : ""
         }`}
       >
-        <FiUsers size={15} />
-        <Link href="/customers">Customers</Link>
+        <Link href="/speakers">SPEAKERS</Link>
       </span>
       <span
         className={`menu-item ${
-          router.pathname == "/settings" ? "active" : ""
+          router.pathname == "/earphones" ? "active" : ""
         }`}
       >
-        <FiSettings size={15} />
-        <Link href="/settings">Settings</Link>
+        <Link href="/earphones">EARPHONES</Link>
       </span>
     </NavContext>
   );

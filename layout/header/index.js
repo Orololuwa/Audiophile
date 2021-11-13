@@ -13,7 +13,7 @@ const Header = () => {
     <HeaderContext>
       <Logo mobile />
       <Nav screen="desktop" />
-      <ToolBar />
+      <span style={{ color: "#fff" }}>...cart</span>
       <Drawer isOpen={showSideDrawer} onClose={onClose} placement="right">
         <Nav screen="mobile" />
       </Drawer>

@@ -52,7 +52,7 @@ const columns = [
 const Home = (props) => {
   const { data } = props;
   return (
-    <div>
+    <div style={{ background: "#000", paddingTop: "5rem" }}>
       <Title>
         <h3>Dashboard</h3>
         <p>Good Morning, Administrator X</p>

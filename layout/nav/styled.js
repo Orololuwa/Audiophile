@@ -25,9 +25,10 @@ const NavContext = styled.nav`
     ${({ screen, theme }) =>
       screen === "mobile" &&
       `width: fit-content;margin: .8rem .25rem;font-size: ${theme.typeScale.bodyText3};`}
+    color: ${({ theme }) => theme.colors.white};
 
     &:hover {
-      color: ${({ theme }) => theme.colors[theme.colors.primary][500]};
+      color: ${({ theme }) => theme.colors.orange[300]};
 
       &::after {
         content: "";
@@ -38,13 +39,13 @@ const NavContext = styled.nav`
         width: 15%;
         height: 5px;
         border-radius: 5px;
-        background: ${({ theme }) => theme.colors[theme.colors.primary][500]};
+        background: ${({ theme }) => theme.colors.orange[300]};
         animation: ${slideInLeft} 0.5s;
       }
     }
   }
   .active {
-    color: ${({ theme }) => theme.colors[theme.colors.primary][500]};
+    color: ${({ theme }) => theme.colors.orange[300]};
 
     &::after {
       content: "";
@@ -55,7 +56,7 @@ const NavContext = styled.nav`
       width: 15%;
       height: 5px;
       border-radius: 5px;
-      background: ${({ theme }) => theme.colors[theme.colors.primary][500]};
+      background: ${({ theme }) => theme.colors.orange[300]};
     }
   }
 
