@@ -19,6 +19,18 @@ const Header = styled.header`
   left: 0;
   width: 100%;
   background: transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: calc(100% - 15rem);
+    transform: translateX(-50%);
+    height: 0.5px;
+    padding: 0 7.5rem;
+    background: ${({ theme }) => theme.colors.gray[50]}aa;
+  }
 `;
 
 export default Header;

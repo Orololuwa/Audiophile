@@ -26,6 +26,7 @@ const NavContext = styled.nav`
       screen === "mobile" &&
       `width: fit-content;margin: .8rem .25rem;font-size: ${theme.typeScale.bodyText3};`}
     color: ${({ theme }) => theme.colors.white};
+    letter-spacing: 3.5px;
 
     &:hover {
       color: ${({ theme }) => theme.colors.orange[300]};

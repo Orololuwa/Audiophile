@@ -2,8 +2,9 @@ import { useState } from "react";
 import HeaderContext, { Menu } from "./styled";
 import Logo from "components/logo";
 import Nav from "layout/nav";
-import ToolBar from "./toolbar";
 import Drawer from "components/drawer";
+import { IoCartOutline } from "react-icons/io5";
+import theme from "theme";
 
 const Header = () => {
   const [showSideDrawer, setShowSideDrawer] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
     <HeaderContext>
       <Logo mobile />
       <Nav screen="desktop" />
-      <span style={{ color: "#fff" }}>...cart</span>
+      <IoCartOutline color={theme.colors.white} size={25} />
       <Drawer isOpen={showSideDrawer} onClose={onClose} placement="right">
         <Nav screen="mobile" />
       </Drawer>
