@@ -24,6 +24,10 @@ const LogoContext = styled.div`
       display: ${({ mobile }) => (mobile ? "none" : "block")};
     }
   }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    display: ${({ mobile }) => (mobile ? "none" : "block")};
+  }
 `;
 
 export default LogoContext;

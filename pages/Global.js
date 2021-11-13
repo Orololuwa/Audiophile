@@ -49,10 +49,14 @@ h2 {
 h3 {font-size: ${theme.typeScale.header3};}
 h4 {font-size: ${theme.typeScale.header4};}
 h5 {font-size: ${theme.typeScale.header5};}  
+h1,h2,h3,h4,h5,h6{
+    margin: 1rem 0;
+}
 
 p{
     font-weight: 100;
     font-size: ${theme.typeScale.bodyText3};
+    margin: .5rem 0;
 }
 
 a{

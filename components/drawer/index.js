@@ -22,6 +22,7 @@ Drawer.propTypes = {
   isOpen: propTypes.bool.isRequired,
   onClose: propTypes.func,
   placement: propTypes.oneOf(["up", "down", "left", "right"]),
+  color: propTypes.string,
 };
 
 export default Drawer;

@@ -14,7 +14,7 @@ const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -30,6 +30,22 @@ const Header = styled.header`
     height: 0.5px;
     padding: 0 7.5rem;
     background: ${({ theme }) => theme.colors.gray[50]}aa;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: calc(100% - 10rem);
+    }
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      width: calc(100% - 5rem);
+    }
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding: 1.5rem 5rem;
+  }
+
+  @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+    padding: 1rem 2.5rem;
   }
 `;
 

@@ -37,8 +37,9 @@ const NavContext = styled.nav`
         position: absolute;
         bottom: -10px;
         left: 50%;
+        transform: translateX(-50%);
         width: 15%;
-        height: 5px;
+        height: 2.5px;
         border-radius: 5px;
         background: ${({ theme }) => theme.colors.orange[300]};
         animation: ${slideInLeft} 0.5s;
@@ -54,8 +55,9 @@ const NavContext = styled.nav`
       position: absolute;
       bottom: -10px;
       left: 50%;
+      transform: translateX(-50%);
       width: 15%;
-      height: 5px;
+      height: 2.5px;
       border-radius: 5px;
       background: ${({ theme }) => theme.colors.orange[300]};
     }

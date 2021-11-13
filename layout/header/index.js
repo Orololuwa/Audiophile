@@ -12,13 +12,18 @@ const Header = () => {
   const onClose = () => setShowSideDrawer(false);
   return (
     <HeaderContext>
-      <Logo mobile />
+      <Menu size={25} onClick={onShow} />
+      <Logo mobile className="logo" />
       <Nav screen="desktop" />
       <IoCartOutline color={theme.colors.white} size={25} />
-      <Drawer isOpen={showSideDrawer} onClose={onClose} placement="right">
+      <Drawer
+        isOpen={showSideDrawer}
+        onClose={onClose}
+        placement="left"
+        color="gray"
+      >
         <Nav screen="mobile" />
       </Drawer>
-      <Menu size={25} onClick={onShow} />
     </HeaderContext>
   );
 };
