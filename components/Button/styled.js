@@ -62,7 +62,7 @@ const ButtonCtx = styled.button`
         ? theme.colors.white
         : variant === "filled"
         ? theme.colors.white
-        : theme.colors.orange[400]};
+        : theme.colors.orange[300]};
     border: 1px solid
       ${({ colorScheme, variant, theme }) =>
         variant === "filled"

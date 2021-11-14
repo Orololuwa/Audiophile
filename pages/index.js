@@ -4,6 +4,7 @@ import withAuth from "HOC/withAuth";
 import Section from "components/section";
 import Button from "components/Button";
 import Col from "components/col";
+import Categories from "layout/content/categories";
 
 const Home = (props) => {
   return (
@@ -24,6 +25,9 @@ const Home = (props) => {
           </Button>
         </Col>
         <div className="hero-right">.</div>
+      </Section>
+      <Section>
+        <Categories />
       </Section>
       <Section>
         <Button variant="outline" colorScheme="gray">
