@@ -111,8 +111,8 @@ export const ZX9 = styled.div`
 
       &:hover,
       &:active {
-        background: ${({ theme }) => theme.colors.gray[700]};
-        border-color: ${({ theme }) => theme.colors.gray[700]};
+        background: ${({ theme }) => theme.colors.gray[800]};
+        border-color: ${({ theme }) => theme.colors.gray[800]};
       }
     }
 
@@ -153,6 +153,65 @@ export const ZX9 = styled.div`
     height: 90vh;
     flex-direction: column;
     background-position: top center;
+  }
+`;
+
+export const ZX7 = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: url(/assets/home/desktop/image-speaker-zx7.jpg) no-repeat center;
+  background-size: cover;
+  border-radius: 10px;
+  flex-basis: 100%;
+  flex-grow: 1;
+  padding: 5rem 0;
+
+  .zx7-textcontent {
+    padding: 3.5rem;
+
+    h4,
+    button {
+      margin: 1.5rem 0;
+    }
+  }
+`;
+
+export const YX1 = styled.div`
+  display: flex;
+  align-items: stretch;
+  flex-basis: 100%;
+  flex-grow: 1;
+  gap: 2rem;
+
+  .yk1-image,
+  .yk1-textcontent {
+    flex-basis: calc(50% - 1rem);
+    border-radius: 10px;
+  }
+
+  .yk1-image {
+    background: url(/assets/home/desktop/image-earphones-yx1.jpg) no-repeat;
+    background-size: cover;
+    padding: 12.5rem 7.5rem;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      padding: 7.5rem 5rem;
+    }
+  }
+
+  .yk1-textcontent {
+    padding: 3.5rem;
+    background: ${({ theme }) => theme.colors.gray[100]};
+
+    h4,
+    button {
+      margin: 1.5rem 0;
+    }
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      padding: 1.5rem;
+    }
   }
 `;
 

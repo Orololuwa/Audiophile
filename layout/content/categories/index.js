@@ -2,7 +2,7 @@ import CategoryCard from "components/Card/category";
 import Flex from "components/flex";
 
 const Categories = () => (
-  <Flex justifyContent="flex-start" gap="1rem">
+  <Flex justifyContent="flex-start" gap="2rem">
     <CategoryCard category="headphones" />
     <CategoryCard category="speakers" />
     <CategoryCard category="earphones" />

@@ -1,5 +1,5 @@
 import React from "react";
-import HomeCtx, { ZX9 } from "./styled";
+import HomeCtx, { YX1, ZX7, ZX9 } from "./styled";
 import withAuth from "HOC/withAuth";
 import Section from "components/section";
 import Button from "components/Button";
@@ -32,7 +32,7 @@ const Home = (props) => {
         <Categories />
       </Section>
       <Section style={{ paddingTop: "0" }}>
-        <Flex gap="1rem" wrap justifyContent="space-between">
+        <Flex gap="3.5rem" wrap justifyContent="space-between">
           <ZX9>
             <div className="zx9-image">
               <Image
@@ -55,36 +55,23 @@ const Home = (props) => {
               </Button>
             </Col>
           </ZX9>
-          <div
-            style={{
-              flexBasis: "100%",
-              background: "red",
-              padding: "1rem",
-              flexGrow: "1",
-            }}
-          >
-            hfjh
-          </div>
-          <div
-            style={{
-              flexBasis: "calc(50% - .5rem)",
-              background: "yellow",
-              padding: "1rem",
-              flexGrow: "1",
-            }}
-          >
-            hfjh
-          </div>
-          <div
-            style={{
-              flexBasis: "calc(50% - .5rem)",
-              background: "blue",
-              padding: "1rem",
-              flexGrow: "1",
-            }}
-          >
-            hfjh
-          </div>
+          <ZX7>
+            <Col className="zx7-textcontent">
+              <h4>ZX7 SPEAKER</h4>
+              <Button variant="outline" colorScheme="gray">
+                SEE PRODUCT
+              </Button>
+            </Col>
+          </ZX7>
+          <YX1>
+            <div className="yk1-image"></div>
+            <Col className="yk1-textcontent" justifyContent="center">
+              <h4>ZX7 SPEAKER</h4>
+              <Button variant="outline" colorScheme="gray">
+                SEE PRODUCT
+              </Button>
+            </Col>
+          </YX1>
         </Flex>
       </Section>
       <Section>
@@ -99,4 +86,4 @@ const Home = (props) => {
   );
 };
 
-export default withAuth(Home);
+export default Home;
