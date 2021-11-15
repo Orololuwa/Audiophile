@@ -1,12 +1,12 @@
 import React from "react";
 import HomeCtx, { YX1, ZX7, ZX9 } from "./styled";
-import withAuth from "HOC/withAuth";
 import Section from "components/section";
 import Button from "components/Button";
 import Col from "components/col";
 import Categories from "layout/content/categories";
 import Flex from "components/flex";
 import Image from "next/image";
+import SectionAudioGear from "layout/content/sectionAudioGear";
 
 const Home = (props) => {
   return (
@@ -74,14 +74,7 @@ const Home = (props) => {
           </YX1>
         </Flex>
       </Section>
-      <Section>
-        <Button variant="outline" colorScheme="gray">
-          SEE PRODUCT
-        </Button>
-        <Button variant="ghost" colorScheme="gray">
-          SEE PRODUCT
-        </Button>
-      </Section>
+      <SectionAudioGear />
     </HomeCtx>
   );
 };
