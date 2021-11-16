@@ -4,6 +4,7 @@ import theme from "theme";
 import GlobalStyle from "../styles/Global";
 import Content from "layout/content";
 import { wrapper } from "redux/store";
+import Footer from "layout/footer";
 
 function App({ Component, pageProps }) {
   return (
@@ -13,6 +14,7 @@ function App({ Component, pageProps }) {
       <Content>
         <Component {...pageProps} />
       </Content>
+      <Footer />
     </ThemeProvider>
   );
 }
