@@ -66,7 +66,7 @@ const Home = (props) => {
           <YX1>
             <div className="yk1-image"></div>
             <Col className="yk1-textcontent" justifyContent="center">
-              <h4>ZX7 SPEAKER</h4>
+              <h4>YK1 SPEAKER</h4>
               <Button variant="outline" colorScheme="gray">
                 SEE PRODUCT
               </Button>

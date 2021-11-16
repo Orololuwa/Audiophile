@@ -191,7 +191,8 @@ export const YX1 = styled.div`
   }
 
   .yk1-image {
-    background: url(/assets/home/desktop/image-earphones-yx1.jpg) no-repeat;
+    background: url(/assets/home/desktop/image-earphones-yx1.jpg) no-repeat
+      center;
     background-size: cover;
     padding: 12.5rem 7.5rem;
 
