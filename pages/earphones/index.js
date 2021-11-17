@@ -5,32 +5,38 @@ import SectionAudioGear from "layout/content/sectionAudioGear";
 import Categories from "layout/content/categories";
 import ProductListing from "components/product/productListing";
 import Hero from "layout/header/hero";
+import Head from "next/head";
 
 const Earphones = (props) => {
   const { data } = props;
 
   return (
-    <EarphonesCtx>
-      <Hero title="Earphones" />
-      <Section>
-        {data.map((product, idx) => {
-          const { name, description, id, image } = product;
-          return (
-            <ProductListing
-              name={name}
-              description={description}
-              image={image}
-              idx={idx}
-              key={id}
-            />
-          );
-        })}
-      </Section>
-      <Section style={{ paddingTop: "0" }}>
-        <Categories />
-      </Section>
-      <SectionAudioGear style={{ paddingTop: "0" }} />
-    </EarphonesCtx>
+    <>
+      <Head>
+        <title>Audiophile e-commerce website | Earphones</title>
+      </Head>
+      <EarphonesCtx>
+        <Hero title="Earphones" />
+        <Section>
+          {data.map((product, idx) => {
+            const { name, description, id, image } = product;
+            return (
+              <ProductListing
+                name={name}
+                description={description}
+                image={image}
+                idx={idx}
+                key={id}
+              />
+            );
+          })}
+        </Section>
+        <Section style={{ paddingTop: "0" }}>
+          <Categories />
+        </Section>
+        <SectionAudioGear style={{ paddingTop: "0" }} />
+      </EarphonesCtx>
+    </>
   );
 };
 

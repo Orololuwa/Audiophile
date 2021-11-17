@@ -18,6 +18,7 @@ const CategoryCard = (props) => (
     <Button variant="ghost">
       <span
         style={{ display: "inline-flex", alignItems: "center", gap: "10px" }}
+        onClick={props.clicked}
       >
         <span style={{ fontSize: theme.typeScale.bodyText5 }}>SHOP</span>
         <IoIosArrowForward size={12} color={theme.colors.orange[300]} />
@@ -28,6 +29,7 @@ const CategoryCard = (props) => (
 
 CategoryCard.propTypes = {
   category: propTypes.string,
+  clicked: propTypes.func,
 };
 
 export default CategoryCard;
