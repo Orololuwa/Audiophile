@@ -2,9 +2,9 @@ import Col from "components/col";
 import Image from "next/image";
 import SectionAudioGearCtx from "./styled";
 
-const SectionAudioGear = () => {
+const SectionAudioGear = (props) => {
   return (
-    <SectionAudioGearCtx>
+    <SectionAudioGearCtx {...props}>
       <Col className="audio_gear-text_content">
         <h2>
           bringing you the <br />
