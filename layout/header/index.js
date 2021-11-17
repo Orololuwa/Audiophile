@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <HeaderContext>
       <Menu size={25} onClick={onShow} />
-      <Logo mobile className="logo" />
+      <Logo />
       <Nav screen="desktop" />
       <IoCartOutline color={theme.colors.white} size={25} />
       <Drawer
@@ -22,6 +22,7 @@ const Header = () => {
         placement="left"
         color="gray"
       >
+        <Logo style={{ margin: "1rem 1rem 2.5rem 1rem" }} />
         <Nav screen="mobile" />
       </Drawer>
     </HeaderContext>
