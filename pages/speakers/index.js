@@ -1,17 +1,17 @@
 import Section from "components/section";
-import HeadphonesCtx from "./styled";
+import SpeakersCtx from "./styled";
 import data from "data.json";
 import SectionAudioGear from "layout/content/sectionAudioGear";
 import Categories from "layout/content/categories";
 import ProductListing from "components/product/productListing";
 import Hero from "layout/header/hero";
 
-const Headphones = (props) => {
+const Speakers = (props) => {
   const { data } = props;
 
   return (
-    <HeadphonesCtx>
-      <Hero title="Headphones" />
+    <SpeakersCtx>
+      <Hero title="Speakers" />
       <Section>
         {data.map((product, idx) => {
           const { name, description, id, image } = product;
@@ -30,14 +30,14 @@ const Headphones = (props) => {
         <Categories />
       </Section>
       <SectionAudioGear style={{ paddingTop: "0" }} />
-    </HeadphonesCtx>
+    </SpeakersCtx>
   );
 };
 
-export default Headphones;
+export default Speakers;
 
 export const getStaticProps = async () => {
-  const filteredData = data.filter((audio) => audio.category === "headphones");
+  const filteredData = data.filter((audio) => audio.category === "speakers");
 
   const reversedData = [];
 
