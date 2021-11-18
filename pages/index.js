@@ -44,6 +44,7 @@ const Home = (props) => {
                   src="/assets/home/desktop/image-speaker-zx9.png"
                   layout="fill"
                   objectFit="contain"
+                  alt="zx9 model speaker"
                 />
               </div>
               <Col className="zx9-textcontent">

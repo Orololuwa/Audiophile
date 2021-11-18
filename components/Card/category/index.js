@@ -12,6 +12,7 @@ const CategoryCard = (props) => (
         layout="fill"
         objectFit="contain"
         src={`/assets/shared/desktop/image-category-thumbnail-${props.category}.png`}
+        alt={props.category}
       />
     </div>
     <div>{props.category}</div>

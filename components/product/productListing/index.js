@@ -21,6 +21,7 @@ const ProductListing = (props) => {
         objectFit="contain"
         objectPosition="center center"
         className="product-image"
+        alt={name}
       />
       <Col className="product-content">
         <h5>NEW PRODUCT</h5>
