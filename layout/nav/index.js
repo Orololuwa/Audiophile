@@ -1,9 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import NavContext from "./styled";
-import { MdOutlineDashboard } from "react-icons/md";
-import { RiPieChartLine } from "react-icons/ri";
-import { FiUsers, FiSettings } from "react-icons/fi";
 import propTypes from "prop-types";
 
 const Nav = (props) => {
@@ -17,21 +14,21 @@ const Nav = (props) => {
       </span>
       <span
         className={`menu-item ${
-          router.pathname == "/headphones" ? "active" : ""
+          /headphones*/g.test(router.pathname) ? "active" : ""
         }`}
       >
         <Link href="/headphones">HEADPHONES</Link>
       </span>
       <span
         className={`menu-item ${
-          router.pathname == "/speakers" ? "active" : ""
+          /speakers*/g.test(router.pathname) ? "active" : ""
         }`}
       >
         <Link href="/speakers">SPEAKERS</Link>
       </span>
       <span
         className={`menu-item ${
-          router.pathname == "/earphones" ? "active" : ""
+          /earphones*/g.test(router.pathname) ? "active" : ""
         }`}
       >
         <Link href="/earphones">EARPHONES</Link>
