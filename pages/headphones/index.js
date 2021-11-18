@@ -27,6 +27,7 @@ const Headphones = (props) => {
                 image={image}
                 idx={idx}
                 key={id}
+                id={id}
               />
             );
           })}

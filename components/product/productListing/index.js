@@ -3,9 +3,16 @@ import propTypes from "prop-types";
 import Col from "components/col";
 import Button from "components/Button";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const ProductListing = (props) => {
-  const { idx, name, description, image } = props;
+  const { idx, name, description, image, id } = props;
+
+  const router = useRouter();
+  const pushProductPage = () => {
+    router.push(`${router.pathname}/${id}`);
+  };
+
   return (
     <ProductListingCtx
       direction={idx % 2 === 1 ? "row-reverse" : "row"}
@@ -27,7 +34,7 @@ const ProductListing = (props) => {
         <h5>NEW PRODUCT</h5>
         <h1>{name}</h1>
         <p>{description}</p>
-        <Button variant="filled" colorScheme="orange">
+        <Button variant="filled" colorScheme="orange" onClick={pushProductPage}>
           SEE PRODUCT
         </Button>
       </Col>
@@ -40,6 +47,7 @@ ProductListing.propTypes = {
   name: propTypes.string,
   description: propTypes.string,
   image: propTypes.string,
+  id: propTypes.number,
 };
 
 export default ProductListing;
