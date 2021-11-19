@@ -27,6 +27,7 @@ const Earphones = (props) => {
                 image={image}
                 idx={idx}
                 key={id}
+                id={id}
               />
             );
           })}

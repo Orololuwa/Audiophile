@@ -4,7 +4,7 @@ import Section from "components/section";
 const SectionAudioGearCtx = styled(Section)`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 3.5rem;
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
@@ -13,10 +13,11 @@ const SectionAudioGearCtx = styled(Section)`
 
   .audio_gear-text_content {
     flex-basis: 50%;
+    text-align: justify;
 
     @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
       align-items: center;
-      text-align: center;
+      text-align: justify;
     }
 
     h2 {

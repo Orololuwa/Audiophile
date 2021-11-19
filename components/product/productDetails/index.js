@@ -53,7 +53,7 @@ const ProductDetail = (props) => {
         })}
       </Col>
       <Col className="product-content align-self-start">
-        <h3>IN THE BOX</h3>
+        <>IN THE BOX</>
         {includes.map((item, idx) => (
           <div key={idx} className="item-listing">
             <h4>{item.quantity}x</h4>

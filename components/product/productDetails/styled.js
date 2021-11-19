@@ -102,6 +102,14 @@ const ProductDetailCtx = styled.div`
   .align-self-start {
     align-self: flex-start;
     align-items: flex-start;
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.md}) {
+      width: 60%;
+    }
+
+    @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
+      width: 100%;
+    }
   }
 `;
 

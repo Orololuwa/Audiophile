@@ -36,7 +36,7 @@ const ProductDetails = ({ productData }) => {
 export default ProductDetails;
 
 export const getStaticPaths = async () => {
-  const paths = getAllProductsId("headphones");
+  const paths = getAllProductsId("speakers");
   return {
     paths,
     fallback: false,
