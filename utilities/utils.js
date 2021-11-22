@@ -14,7 +14,12 @@ export const currencyFormatter = (amount, currency) => {
     ? amount.toLocaleString("en-NG", {
         style: "currency",
         currency,
-        maximumFractionDigits: 2
+        maximumFractionDigits: 2,
       })
     : amount.toLocaleString(2);
+};
+
+export const getSlugAbbrev = (slug) => {
+  slug = slug.split("-");
+  return slug[0];
 };

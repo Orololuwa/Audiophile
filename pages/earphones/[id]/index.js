@@ -25,6 +25,7 @@ const ProductDetails = ({ productData }) => {
           price={price}
           features={features}
           includes={includes}
+          product={productData}
         />
         <ProductGallery
           srcFirst={gallery.first.desktop}

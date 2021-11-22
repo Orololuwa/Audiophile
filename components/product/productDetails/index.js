@@ -3,25 +3,33 @@ import propTypes from "prop-types";
 import Col from "components/col";
 import Button from "components/Button";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { currencyFormatter } from "utilities";
 import { InputNumber } from "components/input";
 import { useRef } from "react";
+import { useDispatch } from "react-redux";
+import actions from "redux/cart/actions";
 
 const ProductDetail = (props) => {
-  const { idx, name, description, image, id, price, features, includes } =
-    props;
+  const {
+    idx,
+    name,
+    description,
+    image,
+    id,
+    price,
+    features,
+    includes,
+    product,
+  } = props;
 
-  const router = useRouter();
   const inputRef = useRef();
+  const dispatch = useDispatch();
 
-  const pushProductPage = () => {
-    router.push(`${router.pathname}/${id}`);
-  };
+  const { addProduct } = actions;
 
   const handleClick = () => {
     const nos = inputRef.current.value;
-    alert("you have " + nos + " item(s) in the cart");
+    dispatch(addProduct(product, nos));
   };
 
   return (
@@ -81,6 +89,7 @@ ProductDetail.propTypes = {
   price: propTypes.number,
   features: propTypes.arrayOf(propTypes.string),
   includes: propTypes.array,
+  product: propTypes.object.isRequired,
 };
 
 export default ProductDetail;

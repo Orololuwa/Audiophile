@@ -16,7 +16,8 @@ const Input = (props) => {
 };
 
 export const InputNumber = forwardRef((props, ref) => {
-  const [state, setState] = useState(0);
+  const { defaultValue } = props;
+  const [state, setState] = useState(defaultValue || 0);
   //0 will eventually change to a prop value;
 
   const increment = () => {
@@ -48,6 +49,10 @@ export const InputNumber = forwardRef((props, ref) => {
     </InputNumberCtx>
   );
 });
+
+InputNumber.propTypes = {
+  defaultValue: propTypes.number,
+};
 
 Input.defaultProps = {
   color: "gray",

@@ -5,11 +5,20 @@ import Nav from "layout/nav";
 import Drawer from "components/drawer";
 import { IoCartOutline } from "react-icons/io5";
 import theme from "theme";
+import { useDispatch } from "react-redux";
+import actions from "redux/cart/actions";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
   const [showSideDrawer, setShowSideDrawer] = useState(false);
   const onShow = () => setShowSideDrawer(true);
   const onClose = () => setShowSideDrawer(false);
+
+  const toggleCartDisplay = () => {
+    dispatch(actions.toggleCartDisplay());
+  };
+
   return (
     <HeaderContext>
       <Menu size={25} onClick={onShow} />
@@ -19,6 +28,7 @@ const Header = () => {
         color={theme.colors.white}
         size={25}
         style={{ cursor: "pointer" }}
+        onClick={toggleCartDisplay}
       />
       <Drawer
         isOpen={showSideDrawer}

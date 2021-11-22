@@ -1,0 +1,8 @@
+const types = {
+  ADD_PRODUCT: "ADD_PRODUCT",
+  REMOVE_PRODUCT: "REMOVE_PRODUCT",
+  CLEAR_ALL: "CLEAR_ALL",
+  TOGGLE_CART_DISPLAY: "TOGGLE_CART_DISPLAY",
+};
+
+export default types;

@@ -79,6 +79,10 @@ export const CartItem = styled.div`
       h5 {
         font-weight: 400;
         font-size: ${({ theme }) => theme.typeScale.bodyText4};
+        text-transform: uppercase;
+      }
+      p {
+        font-size: ${({ theme }) => theme.typeScale.bodyText4};
       }
     }
   }
