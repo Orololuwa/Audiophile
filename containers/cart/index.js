@@ -1,11 +1,11 @@
 import Backdrop from "components/backdrop";
-import CartCtx, { CartItem } from "./styled";
-import Image from "next/image";
-import { InputNumber } from "components/input";
+import CartCtx from "./styled";
 import Button from "components/Button";
 import { useSelector, useDispatch } from "react-redux";
-import { currencyFormatter, getSlugAbbrev } from "utilities";
+import { currencyFormatter } from "utilities";
 import actions from "redux/cart/actions";
+import CartItem from "./CartItem";
+import { useEffect } from "react";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -13,6 +13,10 @@ const Cart = () => {
     productsInCart: state.cart.products,
     total: state.cart.total,
   }));
+
+  useEffect(() => {
+    console.log(productsInCart);
+  }, [productsInCart.length]);
 
   const toggleCartDisplay = () => {
     dispatch(actions.toggleCartDisplay());
@@ -31,22 +35,8 @@ const Cart = () => {
         </div>
         <div className="body">
           {productsInCart &&
-            productsInCart.map((product) => (
-              <CartItem key={product.id}>
-                <div className="product-info">
-                  <Image
-                    src={product.image.mobile}
-                    width={50}
-                    height={50}
-                    className="image"
-                  />
-                  <span>
-                    <h5>{getSlugAbbrev(product.slug)}</h5>
-                    <p>$ {currencyFormatter(product.price)}</p>
-                  </span>
-                </div>
-                <InputNumber defaultValue={product.count} />
-              </CartItem>
+            productsInCart.map((product, idx) => (
+              <CartItem product={product} key={product.id} />
             ))}
           <div className="totals">
             <p>TOTAL</p>

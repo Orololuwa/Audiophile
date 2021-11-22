@@ -16,21 +16,16 @@ const Input = (props) => {
 };
 
 export const InputNumber = forwardRef((props, ref) => {
-  const { defaultValue } = props;
-  const [state, setState] = useState(defaultValue);
+  const { defaultValue, value, onIncrement, onDecrement } = props;
+  const [state, setState] = useState(value);
   //0 will eventually change to a prop value;
 
   const increment = () => {
-    setState((prev) => prev + 1);
+    onIncrement();
   };
 
   const decrement = () => {
-    setState((prev) => {
-      if (prev === 0) {
-        return prev;
-      }
-      return prev - 1;
-    });
+    onDecrement();
   };
 
   useImperativeHandle(ref, () => ({
@@ -42,7 +37,7 @@ export const InputNumber = forwardRef((props, ref) => {
       <span className="icon-left" onClick={decrement}>
         -
       </span>
-      <span>{state}</span>
+      <span>{value}</span>
       <span className="icon-right" onClick={increment}>
         +
       </span>
@@ -56,6 +51,9 @@ InputNumber.defaultProps = {
 
 InputNumber.propTypes = {
   defaultValue: propTypes.number,
+  value: propTypes.number,
+  onIncrement: propTypes.func,
+  onDecrement: propTypes.func,
 };
 
 Input.defaultProps = {

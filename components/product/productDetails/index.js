@@ -26,10 +26,27 @@ const ProductDetail = (props) => {
   const inputRef = useRef();
   const dispatch = useDispatch();
 
+  const [value, setValue] = useState(0);
+
+  const onIncrement = () => {
+    setValue((prev) => {
+      return prev + 1;
+    });
+  };
+
+  const onDecrement = () => {
+    setValue((prev) => {
+      if (prev === 0) {
+        return prev;
+      } else {
+        return prev - 1;
+      }
+    });
+  };
+
   const handleClick = () => {
-    const nos = inputRef.current.value;
-    if (nos === 0) return;
-    dispatch(addToCart(product, nos));
+    if (value === 0) return;
+    dispatch(addToCart(product, value));
   };
 
   return (
@@ -55,7 +72,12 @@ const ProductDetail = (props) => {
         <p>{description}</p>
         <strong>${currencyFormatter(price)}</strong>
         <span>
-          <InputNumber ref={inputRef} className="input" />
+          <InputNumber
+            value={value}
+            onIncrement={onIncrement}
+            onDecrement={onDecrement}
+            className="input"
+          />
           <Button
             variant="filled"
             colorScheme="orange"

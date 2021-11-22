@@ -35,7 +35,12 @@ const CartReducer = (state = initState, action) => {
       };
     case REMOVE_PRODUCT:
       const { id } = payload;
-      const filteredCart = state.products.filter((prd) => prd.id !== id);
+      const filteredCartIndex = state.products.findIndex(
+        (prd) => prd.id !== id
+      );
+      const filteredCart = [...state.products];
+      filteredCart.splice(filteredCartIndex, 1);
+
       return {
         ...state,
         products: filteredCart,
