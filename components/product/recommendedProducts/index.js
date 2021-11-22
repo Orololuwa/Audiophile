@@ -5,14 +5,17 @@ import Col from "components/col";
 import Button from "components/Button";
 import propTypes from "prop-types";
 import { useRouter } from "next/router";
+import data from "data.json";
 
 const RecommendedProduct = (props) => {
   const { products } = props;
   const router = useRouter();
 
-  const pushProductPage = (category, id) => {
-    router.push(`/${category}/${id}`);
+  const pushProductPage = (slug) => {
+    const produce = data.filter((prod) => prod.slug === slug);
+    router.push(`/${produce[0].category}/${produce[0].id}`);
   };
+
   return (
     <RecommendedProductCtx>
       <h2>You may also like</h2>
@@ -22,7 +25,7 @@ const RecommendedProduct = (props) => {
             <ImageCard src={product.image.desktop} />
             <h5>{product.name}</h5>
             <Button
-              onClick={() => pushProductPage(product.category, product.id)}
+              onClick={() => pushProductPage(product.slug)}
               colorScheme="orange"
             >
               SEE PRODUCT
