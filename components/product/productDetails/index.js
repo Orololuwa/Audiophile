@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import ProductDetailCtx from "./styled";
 import propTypes from "prop-types";
 import Col from "components/col";
@@ -27,6 +28,7 @@ const ProductDetail = (props) => {
 
   const handleClick = () => {
     const nos = inputRef.current.value;
+    if (nos === 0) return;
     dispatch(addToCart(product, nos));
   };
 
@@ -54,7 +56,12 @@ const ProductDetail = (props) => {
         <strong>${currencyFormatter(price)}</strong>
         <span>
           <InputNumber ref={inputRef} className="input" />
-          <Button variant="filled" colorScheme="orange" onClick={handleClick}>
+          <Button
+            variant="filled"
+            colorScheme="orange"
+            onClick={handleClick}
+            //disabled={nos === 0}
+          >
             ADD TO CART
           </Button>
         </span>

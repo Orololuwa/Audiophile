@@ -77,7 +77,9 @@ const ButtonCtx = styled.button`
     }
   }
 
-  &:disabled{
+  ${({ disabled }) =>
+    disabled === true &&
+    `
     cursor: not-allowed;
     background: ${({ colorScheme, variant, theme }) =>
       variant === "outline"
@@ -105,7 +107,7 @@ const ButtonCtx = styled.button`
           : variant === "ghost"
           ? theme.colors[colorScheme][50]
           : theme.colors[colorScheme][300]};
-  }
+  `}
 `;
 
 export default ButtonCtx;
