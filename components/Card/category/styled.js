@@ -7,9 +7,10 @@ const CategoryCardCtx = styled.div`
   background: ${({ theme }) => theme.colors.gray[100]};
   text-transform: uppercase;
   padding-top: 7.5rem;
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
   margin: 2.5rem 0;
+  flex-basis: calc(33.3% - 0.67rem);
 
   .category-image {
     position: absolute;
@@ -34,6 +35,9 @@ const CategoryCardCtx = styled.div`
 
   @media only screen and (max-width: ${({ theme }) => theme.breakpoints.sm}) {
     padding-top: 3.5rem;
+    flex-basis: 100%;
+    width: 100%;
+    padding-bottom: 2.5rem;
   }
 `;
 

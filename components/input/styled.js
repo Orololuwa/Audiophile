@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "components/Button";
 
 export const InputWrapper = styled.div`
   position: relative;
@@ -98,5 +99,41 @@ export const InputCtx = styled.input`
           : mode === "dark"
           ? theme.colors[color][700]
           : null};
+  }
+`;
+
+export const InputNumberCtx = styled(Button)`
+  background: ${({ theme }) => theme.colors.gray[100]};
+  border-color: ${({ theme }) => theme.colors.gray[100]};
+  position: relative;
+  cursor: default;
+  padding: 10px 30px;
+  color: ${({ theme }) => theme.colors.gray[900]};
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.gray[50]};
+    border-color: ${({ theme }) => theme.colors.gray[50]};
+    color: ${({ theme }) => theme.colors.gray[900]};
+  }
+
+  .icon-left,
+  .icon-right {
+    position: absolute;
+    top: 0;
+    //transform: translateY(-50%);
+    padding: 2.5px 5px;
+    cursor: pointer;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon-left {
+    left: 5px;
+  }
+
+  .icon-right {
+    right: 2.5px;
   }
 `;

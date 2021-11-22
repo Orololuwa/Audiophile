@@ -28,6 +28,7 @@ Button.propTypes = {
   variant: propTypes.oneOf(["outline", "filled", "ghost"]),
   colorScheme: propTypes.string,
   loading: propTypes.bool,
+  onClick: propTypes.func,
 };
 
 export default Button;

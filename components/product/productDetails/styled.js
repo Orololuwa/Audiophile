@@ -63,6 +63,10 @@ const ProductDetailCtx = styled.div`
       margin: 2.5rem 0;
     }
 
+    .input {
+      margin-right: 2rem;
+    }
+
     p {
       width: 90%;
       font-size: ${({ theme }) => theme.typeScale.bodyText4};

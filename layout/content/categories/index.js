@@ -1,6 +1,6 @@
 import CategoryCard from "components/Card/category";
-import Flex from "components/flex";
 import { useRouter } from "next/router";
+import CategoriesCtx from "./styled";
 
 const Categories = () => {
   const router = useRouter();
@@ -9,7 +9,7 @@ const Categories = () => {
   };
 
   return (
-    <Flex justifyContent="flex-start" gap="2rem">
+    <CategoriesCtx justifyContent="flex-start" gap="2rem">
       <CategoryCard
         clicked={() => onClickHandler("headphones")}
         category="headphones"
@@ -22,7 +22,7 @@ const Categories = () => {
         clicked={() => onClickHandler("earphones")}
         category="earphones"
       />
-    </Flex>
+    </CategoriesCtx>
   );
 };
 
