@@ -1,10 +1,17 @@
 import types from "./types";
 
-const { ADD_PRODUCT, REMOVE_PRODUCT, CLEAR_ALL, TOGGLE_CART_DISPLAY } = types;
+const {
+  ADD_PRODUCT,
+  REMOVE_PRODUCT,
+  CLEAR_ALL,
+  CALC_TOTAL,
+  TOGGLE_CART_DISPLAY,
+} = types;
 
 const initState = {
   products: [],
   cartShow: false,
+  total: 0,
 };
 
 const CartReducer = (state = initState, action) => {
@@ -37,6 +44,14 @@ const CartReducer = (state = initState, action) => {
       return {
         ...state,
         products: [],
+      };
+    case CALC_TOTAL:
+      const total__ = state.products.reduce((total_, curr) => {
+        return total_ + curr.price * curr.count;
+      }, 0);
+      return {
+        ...state,
+        total: total__,
       };
     case TOGGLE_CART_DISPLAY:
       return {

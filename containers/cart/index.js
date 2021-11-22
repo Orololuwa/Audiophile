@@ -9,7 +9,10 @@ import actions from "redux/cart/actions";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const productsInCart = useSelector((state) => state.cart.products);
+  const { productsInCart, total } = useSelector((state) => ({
+    productsInCart: state.cart.products,
+    total: state.cart.total,
+  }));
 
   const toggleCartDisplay = () => {
     dispatch(actions.toggleCartDisplay());
@@ -47,7 +50,7 @@ const Cart = () => {
             ))}
           <div className="totals">
             <p>TOTAL</p>
-            <h6>$ 656.67</h6>
+            <h6>$ {currencyFormatter(total)}</h6>
           </div>
         </div>
         <div className="footer">

@@ -28,6 +28,11 @@ const actions = {
       type: types.TOGGLE_CART_DISPLAY,
     };
   },
+  getTotals: () => {
+    return {
+      type: types.CALC_TOTAL,
+    };
+  },
 };
 
 export default actions;

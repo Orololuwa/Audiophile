@@ -7,7 +7,7 @@ import { currencyFormatter } from "utilities";
 import { InputNumber } from "components/input";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
-import actions from "redux/cart/actions";
+import { addToCart } from "redux/cart/actionCreators";
 
 const ProductDetail = (props) => {
   const {
@@ -25,11 +25,9 @@ const ProductDetail = (props) => {
   const inputRef = useRef();
   const dispatch = useDispatch();
 
-  const { addProduct } = actions;
-
   const handleClick = () => {
     const nos = inputRef.current.value;
-    dispatch(addProduct(product, nos));
+    dispatch(addToCart(product, nos));
   };
 
   return (

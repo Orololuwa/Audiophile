@@ -3,6 +3,7 @@ const types = {
   REMOVE_PRODUCT: "REMOVE_PRODUCT",
   CLEAR_ALL: "CLEAR_ALL",
   TOGGLE_CART_DISPLAY: "TOGGLE_CART_DISPLAY",
+  CALC_TOTAL: "CALC_TOTAL",
 };
 
 export default types;
