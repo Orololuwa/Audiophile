@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { normalize } from "polished";
 
-import theme from "theme";
-
 const GlobalStyle = createGlobalStyle`
 ${normalize()}
 
@@ -29,9 +27,9 @@ body {
     transition: all 0.05s linear;
     width: 100%;
     line-height: 2.1rem;
-    font-size: ${theme.typeScale.bodyText4};
-    font-family: ${theme.primaryFont};
-    color: ${theme.colors.gray[900]};
+    font-size: ${({ theme }) => theme.typeScale.bodyText4};
+    font-family: ${({ theme }) => theme.primaryFont};
+    color: ${({ theme }) => theme.colors.gray[900]};
     font-style: normal;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
@@ -40,22 +38,23 @@ body {
   
 h1 {
     line-height: 4rem;
-    font-size: ${theme.typeScale.header1};
+    font-size: ${({ theme }) => theme.typeScale.header1};
 }
 h2 {
     line-height: 2.8rem;
-    font-size: ${theme.typeScale.header2};
+    font-size: ${({ theme }) => theme.typeScale.header2};
 }
-h3 {font-size: ${theme.typeScale.header3};}
-h4 {font-size: ${theme.typeScale.header4};}
-h5 {font-size: ${theme.typeScale.header5};}  
+h3 {font-size: ${({ theme }) => theme.typeScale.header3};}
+h4 {font-size: ${({ theme }) => theme.typeScale.header4};}
+h5 {font-size: ${({ theme }) => theme.typeScale.header5};}
+h6 {font-size: ${({ theme }) => theme.typeScale.bodyText3};}
 h1,h2,h3,h4,h5,h6{
     margin: 1rem 0;
 }
 
 p{
     font-weight: 100;
-    font-size: ${theme.typeScale.bodyText3};
+    font-size: ${({ theme }) => theme.typeScale.bodyText3};
     margin: .5rem 0;
 }
 

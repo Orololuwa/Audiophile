@@ -15,7 +15,11 @@ const Header = () => {
       <Menu size={25} onClick={onShow} />
       <Logo />
       <Nav screen="desktop" />
-      <IoCartOutline color={theme.colors.white} size={25} />
+      <IoCartOutline
+        color={theme.colors.white}
+        size={25}
+        style={{ cursor: "pointer" }}
+      />
       <Drawer
         isOpen={showSideDrawer}
         onClose={onClose}

@@ -20,8 +20,8 @@ const RecommendedProduct = (props) => {
     <RecommendedProductCtx>
       <h2>You may also like</h2>
       <Flex className="row">
-        {products.map((product) => (
-          <Col alignItems="center" gap="2rem" className="col" key={product.id}>
+        {products.map((product, idx) => (
+          <Col alignItems="center" gap="2rem" className="col" key={idx}>
             <ImageCard src={product.image.desktop} />
             <h5>{product.name}</h5>
             <Button
