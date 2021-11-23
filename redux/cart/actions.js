@@ -33,6 +33,14 @@ const actions = {
       type: types.CALC_TOTAL,
     };
   },
+  bumpCart: (value) => {
+    return {
+      type: types.BUMP_CART,
+      payload: {
+        value,
+      },
+    };
+  },
 };
 
 export default actions;

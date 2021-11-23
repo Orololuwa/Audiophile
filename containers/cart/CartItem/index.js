@@ -9,7 +9,6 @@ import { currencyFormatter, getSlugAbbrev } from "utilities";
 const CartItem = ({ product }) => {
   const dispatch = useDispatch();
   const [value, setValue] = useState(product.count);
-  console.log(value);
 
   useEffect(() => {
     dispatch(updateCart(product, value));

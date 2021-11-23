@@ -4,6 +4,7 @@ const types = {
   CLEAR_ALL: "CLEAR_ALL",
   TOGGLE_CART_DISPLAY: "TOGGLE_CART_DISPLAY",
   CALC_TOTAL: "CALC_TOTAL",
+  BUMP_CART: "BUMP_CART",
 };
 
 export default types;

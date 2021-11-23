@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { currencyFormatter } from "utilities";
 import actions from "redux/cart/actions";
 import CartItem from "./CartItem";
-import { useEffect } from "react";
 import { clearCart } from "redux/cart/actionCreators";
 
 const Cart = () => {
@@ -14,10 +13,6 @@ const Cart = () => {
     productsInCart: state.cart.products,
     total: state.cart.total,
   }));
-
-  useEffect(() => {
-    console.log(productsInCart);
-  }, [productsInCart.length]);
 
   const toggleCartDisplay = () => {
     dispatch(actions.toggleCartDisplay());

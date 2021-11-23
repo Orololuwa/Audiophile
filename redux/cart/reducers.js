@@ -6,12 +6,14 @@ const {
   CLEAR_ALL,
   CALC_TOTAL,
   TOGGLE_CART_DISPLAY,
+  BUMP_CART,
 } = types;
 
 const initState = {
   products: [],
   cartShow: false,
   total: 0,
+  cartBump: false,
 };
 
 const CartReducer = (state = initState, action) => {
@@ -62,6 +64,12 @@ const CartReducer = (state = initState, action) => {
       return {
         ...state,
         cartShow: !state.cartShow,
+      };
+    case BUMP_CART:
+      const { value } = payload;
+      return {
+        ...state,
+        cartBump: value,
       };
     default:
       return { ...state };
