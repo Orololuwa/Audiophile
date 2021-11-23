@@ -15,9 +15,8 @@ const Input = (props) => {
   );
 };
 
-export const InputNumber = forwardRef((props, ref) => {
-  const { defaultValue, value, onIncrement, onDecrement } = props;
-  const [state, setState] = useState(value);
+export const InputNumber = (props, ref) => {
+  const { value, onIncrement, onDecrement } = props;
   //0 will eventually change to a prop value;
 
   const increment = () => {
@@ -27,10 +26,6 @@ export const InputNumber = forwardRef((props, ref) => {
   const decrement = () => {
     onDecrement();
   };
-
-  useImperativeHandle(ref, () => ({
-    value: state,
-  }));
 
   return (
     <InputNumberCtx colorScheme="gray" {...props}>
@@ -43,7 +38,7 @@ export const InputNumber = forwardRef((props, ref) => {
       </span>
     </InputNumberCtx>
   );
-});
+};
 
 InputNumber.defaultProps = {
   defaultValue: 0,

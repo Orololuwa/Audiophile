@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Image from "next/image";
 import CartItemCtx from "./styled";
 import { InputNumber } from "components/input";
-import { updateCart, removeFromCart } from "redux/cart/actionCreators";
+import { updateCart } from "redux/cart/actionCreators";
 import { currencyFormatter, getSlugAbbrev } from "utilities";
 
 const CartItem = ({ product }) => {
@@ -12,11 +12,7 @@ const CartItem = ({ product }) => {
   console.log(value);
 
   useEffect(() => {
-    if (value === 0) {
-      dispatch(removeFromCart(product.id));
-    } else {
-      dispatch(updateCart(product, value));
-    }
+    dispatch(updateCart(product, value));
   }, [value]);
 
   const onIncrement = () => {
@@ -28,9 +24,9 @@ const CartItem = ({ product }) => {
 
   const onDecrement = () => {
     setValue((prev) => {
-      //   if (prev === 0) {
-      //     return prev;
-      //   }
+      if (prev === 0) {
+        return prev;
+      }
       return prev - 1;
     });
   };
@@ -58,4 +54,4 @@ const CartItem = ({ product }) => {
   );
 };
 
-export default CartItem;
+export default memo(CartItem);

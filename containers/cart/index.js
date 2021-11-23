@@ -6,6 +6,7 @@ import { currencyFormatter } from "utilities";
 import actions from "redux/cart/actions";
 import CartItem from "./CartItem";
 import { useEffect } from "react";
+import { clearCart } from "redux/cart/actionCreators";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,10 @@ const Cart = () => {
     dispatch(actions.toggleCartDisplay());
   };
 
+  const removeAllFromCart = () => {
+    dispatch(clearCart());
+  };
+
   return (
     <>
       <Backdrop onConfirm={toggleCartDisplay} />
@@ -31,13 +36,14 @@ const Cart = () => {
             <p>Cart</p>
             <p>({productsInCart.length})</p>
           </span>
-          <p className="clearcart">remove all</p>
+          <p className="clearcart" onClick={removeAllFromCart}>
+            remove all
+          </p>
         </div>
         <div className="body">
-          {productsInCart &&
-            productsInCart.map((product, idx) => (
-              <CartItem product={product} key={product.id} />
-            ))}
+          {productsInCart.map((product) => (
+            <CartItem product={product} key={product.id} />
+          ))}
           <div className="totals">
             <p>TOTAL</p>
             <h6>$ {currencyFormatter(total)}</h6>
