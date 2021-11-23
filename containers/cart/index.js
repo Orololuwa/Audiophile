@@ -50,7 +50,9 @@ const Cart = () => {
           </div>
         </div>
         <div className="footer">
-          <Button colorScheme="orange">CHECK OUT</Button>
+          <Button colorScheme="orange" disabled={total === 0}>
+            CHECK OUT
+          </Button>
         </div>
       </CartCtx>
     </>

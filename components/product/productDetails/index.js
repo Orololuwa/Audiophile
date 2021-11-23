@@ -82,7 +82,7 @@ const ProductDetail = (props) => {
             variant="filled"
             colorScheme="orange"
             onClick={handleClick}
-            //disabled={nos === 0}
+            disabled={value === 0}
           >
             ADD TO CART
           </Button>
