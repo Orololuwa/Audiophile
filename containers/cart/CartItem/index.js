@@ -5,8 +5,9 @@ import CartItemCtx from "./styled";
 import { InputNumber } from "components/input";
 import { updateCart } from "redux/cart/actionCreators";
 import { currencyFormatter, getSlugAbbrev } from "utilities";
+import propTypes from "prop-types";
 
-const CartItem = ({ product }) => {
+const CartItem = ({ product, checkout }) => {
   const dispatch = useDispatch();
   const [value, setValue] = useState(product.count);
 
@@ -44,13 +45,21 @@ const CartItem = ({ product }) => {
           <p>$ {currencyFormatter(product.price)}</p>
         </span>
       </div>
-      <InputNumber
-        value={value}
-        onIncrement={onIncrement}
-        onDecrement={onDecrement}
-      />
+      {!checkout && (
+        <InputNumber
+          value={value}
+          onIncrement={onIncrement}
+          onDecrement={onDecrement}
+        />
+      )}
+      {checkout && <h3 style={{ fontWeight: "300" }}>x{value}</h3>}
     </CartItemCtx>
   );
 };
 
-export default memo(CartItem);
+CartItem.propTypes = {
+  product: propTypes.object,
+  checkout: propTypes.any,
+};
+
+export default CartItem;

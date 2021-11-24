@@ -12,6 +12,7 @@ const composeEnhancers =
 
 const enhancer = composeEnhancers(applyMiddleware(...middleware));
 
-const makeStore = () => createStore(rootReducer, enhancer);
+const makeStore = (initialState = {}) =>
+  createStore(rootReducer, initialState, enhancer);
 
 export const wrapper = createWrapper(makeStore);

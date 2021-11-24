@@ -6,6 +6,7 @@ import { currencyFormatter } from "utilities";
 import actions from "redux/cart/actions";
 import CartItem from "./CartItem";
 import { clearCart } from "redux/cart/actionCreators";
+import router from "next/router";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,12 @@ const Cart = () => {
 
   const removeAllFromCart = () => {
     dispatch(clearCart());
+  };
+
+  const pushCheckout = () => {
+    if (total === 0) return;
+    router.push("/checkout");
+    dispatch(actions.toggleCartDisplay());
   };
 
   return (
@@ -45,7 +52,11 @@ const Cart = () => {
           </div>
         </div>
         <div className="footer">
-          <Button colorScheme="orange" disabled={total === 0}>
+          <Button
+            colorScheme="orange"
+            disabled={total === 0}
+            onClick={pushCheckout}
+          >
             CHECK OUT
           </Button>
         </div>

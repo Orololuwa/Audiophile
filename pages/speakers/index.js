@@ -5,16 +5,14 @@ import SectionAudioGear from "layout/content/sectionAudioGear";
 import Categories from "layout/content/categories";
 import ProductListing from "components/product/productListing";
 import Hero from "layout/header/hero";
-import Head from "next/head";
+import Head from "components/head";
 
 const Speakers = (props) => {
   const { data } = props;
 
   return (
     <>
-      <Head>
-        <title>Audiophile e-commerce website | Speakers</title>
-      </Head>
+      <Head title="Audiophile e-commerce website | speakers" />
       <SpeakersCtx>
         <Hero title="Speakers" />
         <Section>
