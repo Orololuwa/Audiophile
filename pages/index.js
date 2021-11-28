@@ -8,6 +8,8 @@ import Flex from "components/flex";
 import Image from "next/image";
 import SectionAudioGear from "layout/content/sectionAudioGear";
 import Head from "next/head";
+import data from "data.json";
+import router from "next/router";
 
 const Home = (props) => {
   return (
@@ -27,7 +29,11 @@ const Home = (props) => {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </p>
-            <Button variant="filled" colorScheme="orange">
+            <Button
+              variant="filled"
+              colorScheme="orange"
+              onClick={() => router.push("/headphones/4")}
+            >
               SEE PRODUCT
             </Button>
           </Col>
@@ -56,7 +62,11 @@ const Home = (props) => {
                   Upgrade to premium speakers that are phenomenally built to
                   deliver truly remarkable sound.
                 </p>
-                <Button variant="filled" colorScheme="gray">
+                <Button
+                  variant="filled"
+                  colorScheme="gray"
+                  onClick={() => router.push("/speakers/6")}
+                >
                   SEE PRODUCT
                 </Button>
               </Col>
@@ -64,7 +74,11 @@ const Home = (props) => {
             <ZX7>
               <Col className="zx7-textcontent">
                 <h4>ZX7 SPEAKER</h4>
-                <Button variant="outline" colorScheme="gray">
+                <Button
+                  variant="outline"
+                  colorScheme="gray"
+                  onClick={() => router.push("/speakers/5")}
+                >
                   SEE PRODUCT
                 </Button>
               </Col>
@@ -73,7 +87,11 @@ const Home = (props) => {
               <div className="yk1-image"></div>
               <Col className="yk1-textcontent" justifyContent="center">
                 <h4>YK1 SPEAKER</h4>
-                <Button variant="outline" colorScheme="gray">
+                <Button
+                  variant="outline"
+                  colorScheme="gray"
+                  onClick={() => router.push("/earphones/1")}
+                >
                   SEE PRODUCT
                 </Button>
               </Col>

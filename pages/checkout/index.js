@@ -35,7 +35,7 @@ const Checkout = () => {
     total: state.cart.total,
   }));
 
-  let vat = Math.round(0.15 * total);
+  let vat = Math.round(0.0015 * total);
   const shipping = 50;
   let grandTotal = total + shipping + vat;
 
