@@ -49,7 +49,7 @@ export const getStaticPaths = async () => {
   const paths = getAllProductsId("earphones");
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 

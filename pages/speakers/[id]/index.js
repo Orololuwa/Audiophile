@@ -48,7 +48,7 @@ export const getStaticPaths = async () => {
   const paths = getAllProductsId("speakers");
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 

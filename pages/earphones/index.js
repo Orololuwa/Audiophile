@@ -54,6 +54,5 @@ export const getStaticProps = async () => {
     props: {
       data: reversedData,
     },
-    revalidate: 3600,
   };
 };
