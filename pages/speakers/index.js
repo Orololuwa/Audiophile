@@ -6,6 +6,7 @@ import Categories from "layout/content/categories";
 import ProductListing from "components/product/productListing";
 import Hero from "layout/header/hero";
 import Head from "components/head";
+import { Slide } from "react-reveal";
 
 const Speakers = (props) => {
   const { data } = props;
@@ -19,14 +20,16 @@ const Speakers = (props) => {
           {data.map((product, idx) => {
             const { name, description, id, image } = product;
             return (
-              <ProductListing
-                name={name}
-                description={description}
-                image={image}
-                idx={idx}
-                key={id}
-                id={id}
-              />
+              <Slide left={idx % 2 === 0 && true} right={idx % 2 !== 0 && true}>
+                <ProductListing
+                  name={name}
+                  description={description}
+                  image={image}
+                  idx={idx}
+                  key={id}
+                  id={id}
+                />
+              </Slide>
             );
           })}
         </Section>

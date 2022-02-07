@@ -9,6 +9,7 @@ import { InputNumber } from "components/input";
 import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "redux/cart/actionCreators";
+import { Fade } from "react-reveal";
 
 const ProductDetail = (props) => {
   const {
@@ -57,15 +58,17 @@ const ProductDetail = (props) => {
       className="flex"
       {...props}
     >
-      <Image
-        src={image}
-        height={500}
-        width={400}
-        objectFit="contain"
-        objectPosition="center center"
-        className="product-image"
-        alt={name}
-      />
+      <Fade duration={5000}>
+        <Image
+          src={image}
+          height={500}
+          width={400}
+          objectFit="contain"
+          objectPosition="center center"
+          className="product-image"
+          alt={name}
+        />
+      </Fade>
       <Col className="product-content">
         <h5>NEW PRODUCT</h5>
         <h1>{name}</h1>

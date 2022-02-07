@@ -8,8 +8,9 @@ import Flex from "components/flex";
 import Image from "next/image";
 import SectionAudioGear from "layout/content/sectionAudioGear";
 import Head from "next/head";
-import data from "data.json";
 import router from "next/router";
+import Slide from "react-reveal/Slide";
+import Wobble from "react-reveal/Wobble";
 
 const Home = (props) => {
   return (
@@ -19,24 +20,26 @@ const Home = (props) => {
       </Head>
       <HomeCtx>
         <Section className="hero">
-          <Col className="hero-left" gap="1rem">
-            <h4>NEW PRODUCT</h4>
-            <h1>
-              XX99 MARK II <br />
-              HEADPHONES
-            </h1>
-            <p>
-              Experience natural, lifelike audio and exceptional build quality
-              made for the passionate music enthusiast.
-            </p>
-            <Button
-              variant="filled"
-              colorScheme="orange"
-              onClick={() => router.push("/headphones/4")}
-            >
-              SEE PRODUCT
-            </Button>
-          </Col>
+          <Slide left>
+            <Col className="hero-left" gap="1rem">
+              <h4>NEW PRODUCT</h4>
+              <h1>
+                XX99 MARK II <br />
+                HEADPHONES
+              </h1>
+              <p>
+                Experience natural, lifelike audio and exceptional build quality
+                made for the passionate music enthusiast.
+              </p>
+              <Button
+                variant="filled"
+                colorScheme="orange"
+                onClick={() => router.push("/headphones/4")}
+              >
+                SEE PRODUCT
+              </Button>
+            </Col>
+          </Slide>
           <div className="hero-right">.</div>
         </Section>
         <Section>
@@ -45,14 +48,16 @@ const Home = (props) => {
         <Section style={{ paddingTop: "0" }}>
           <Flex gap="3.5rem" wrap justifyContent="space-between">
             <ZX9>
-              <div className="zx9-image">
-                <Image
-                  src="/assets/home/desktop/image-speaker-zx9.png"
-                  layout="fill"
-                  objectFit="contain"
-                  alt="zx9 model speaker"
-                />
-              </div>
+              <Wobble bottom>
+                <div className="zx9-image">
+                  <Image
+                    src="/assets/home/desktop/image-speaker-zx9.png"
+                    layout="fill"
+                    objectFit="contain"
+                    alt="zx9 model speaker"
+                  />
+                </div>
+              </Wobble>
               <Col className="zx9-textcontent">
                 <h1>
                   ZX9 <br />
